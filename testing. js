@@ -10,7 +10,7 @@ while (counter<=10){
     counter = counter+1;
 }
 
-counter = 0; 
+counter = 3; 
 do {
     console.log(counter);
     counter = counter + 1;
