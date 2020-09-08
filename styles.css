@@ -1,0 +1,19 @@
+.greenItems{
+    color: green; 
+    font-size: 4em;
+    }
+#yellowItems{
+    color: yellowgreen;
+    font-size: 2em;
+    }
+
+#square {
+    width: 100px;
+    height: 100px;
+    background: red;
+    }
+#circle {
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    }
