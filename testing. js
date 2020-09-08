@@ -1,2 +1,17 @@
-let x = 23
-x
+var carName = 'Volvo';
+console.log(carName);
+x = 1;
+console.log(x);
+if (x === 1) console.log('adult')
+
+counter = 0;
+while (counter<=10){
+    console.log(counter);
+    counter = counter+1;
+}
+
+counter = 0; 
+do {
+    console.log(counter);
+    counter = counter + 1;
+} while (counter <= 10);
