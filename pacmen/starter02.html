@@ -28,14 +28,15 @@
         //
         // set position here 
         //
-
+        newimg.style.left = position.x;
+        newimg.style.top = position.y;
         // add new Child image to game
-        game.appendChild( ? ? ? );
+        game.appendChild(newimg);
         // return details in an object
         return {
-            position,
-            velocity,
-            newimg
+            position: position,
+            velocity: velocity,
+            newimg: newimg,
         }
     }
 
@@ -56,6 +57,7 @@
         //
         // detect collision with all walls and make pacman bounce
         //
+        
     }
 
     function makeOne() {
