@@ -24,7 +24,7 @@ do {
 function addition(num1, num2) {
     return num1+num2
 }
- addition(1, 2)
+console.log(addition(1, 2))
  
 var add = function(x,y) {
     return x + y
