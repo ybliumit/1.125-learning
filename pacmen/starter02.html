@@ -18,7 +18,7 @@
     function makePac() {
         // returns an object with random values scaled {x: 33, y: 21}
         let velocity = setToRandom(10); // {x:?, y:?}
-        let position = setToRandom(500);
+        let position = setToRandom(600);
         // Add image to div id = game
         let game = document.getElementById('game');
         let newimg = document.createElement('img');
@@ -56,7 +56,24 @@
     function checkCollisions(item) {
         //
         // detect collision with all walls and make pacman bounce
-        
+        var i = 0
+        while (i < pacMen.length) {
+            let item_centerx = item.position.x + item.newimg.width;
+            let item_centery = item.position.y + item.newimg.height;
+            let i_centerx = pacMen[i].position.x + item.newimg.width;
+            let i_centery = pacMen[i].position.y + item.newimg.height;
+            let distance2 = (item_centerx - i_centerx)**2 + (item_centery - i_centery)**2;
+            const l2 = item.newimg.height**2;
+            if (distance2 <= l2 && distance2 != 0) {
+                let temp_v_x = item.velocity.x;
+                let temp_v_y = item.velocity.y;
+                item.velocity.x = pacMen[i].velocity.x;
+                item.velocity.y = pacMen[i].velocity.y;
+                pacMen[i].velocity.x = temp_v_x;
+                pacMen[i].velocity.y = temp_v_y;
+            }
+            i ++;
+        }
         if (item.position.x >= (window.innerWidth - item.newimg.width) || item.position.x <= 0) {
             item.velocity.x = 0 - item.velocity.x;
         }
@@ -65,22 +82,7 @@
         }
         //console.log(item.newimg.height)
         //console.log(item.newimg.width)
-        var i = 0
-        while (i < pacMen.length) {
-            let item_centerx = item.position.x + item.newimg.width;
-            let item_centery = item.position.y + item.newimg.height;
-            let i_centerx = pacMen[i].position.x + item.newimg.width;
-            let i_centery = pacMen[i].position.y + item.newimg.height;
-            let distance2 = (item_centerx - i_centerx)**2 + (item_centery - i_centery)**2;
-            const l2 = item.newimg.width**2 + item.newimg.height**2;
-            if (distance2 <= l2 && distance2 != 0) {
-                item.velocity.x = 0 - item.velocity.x;
-                item.velocity.y = 0 - item.velocity.y;
-                pacMen[i].velocity.x = 0 - pacMen[i].velocity.x;
-                pacMen[i].velocity.y = 0 - pacMen[i].velocity.y;
-            }
-            i ++;
-        }
+        
 
     }
 
