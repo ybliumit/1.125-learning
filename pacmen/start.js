@@ -19,7 +19,7 @@ function Run() {
         pos += 20;
         img.style.left = pos + 'px'; //changing the position. 
     }
-    setTimeout(Run, 200);
+    setTimeout(Run, 100);
     // Use setTimeout to call Run every 200 millesecs
 }
 
@@ -27,9 +27,9 @@ function checkPageBounds(direction, imgWidth) {
     //
     // Complete this to reverse direction on hitting page bounds
     //
-    if pos == window.innerWidth - imgWidth {
-        direction = 1;
-    }
-    else if pos == 0 {direction = 0;} 
+    const IW = window.innerWidth;
+    if (pos >= (IW-imgWidth)) {direction = 1;}
+    console.log(pos);
+    if (pos == 0) {direction = 0;} 
     return direction;
 }
