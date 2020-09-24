@@ -1,0 +1,39 @@
+
+
+<script>
+
+async function getBusLocations(){
+    const url= 'https://api-v3.mbta.com/vehicles?filter[route]=57&include=trip';
+    const response = await fetch(url);
+    const json = await response.json();
+    return json.data;
+}
+
+async function run(){
+    const locations = await getBusLocations();
+    //console.log(new Date());
+    //console.log(locations[0].attributes.latitude);
+    busLocations = [];
+    for (let index = 0; index < locations.length; index++) {
+        busLocations.push([locations[index].attributes.longitude, locations[index].attributes.latitude]); 
+    }
+    //console.log(busLocations)
+    return busLocations;
+    //setTimeout(run, 10000);
+}
+
+var x = (async() =>{
+    console.log(await run())
+})()
+
+//console.log(x)
+/*
+var test = run().then(x=>{
+    console.log(x);
+});
+
+console.log(test);
+*/
+    
+</script>
+    

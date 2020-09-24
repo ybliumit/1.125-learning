@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Map</title>
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+  body { margin: 0; padding: 0; }
+  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  .map-overlay{
+    position: absolute;
+    left: 0;
+    padding: px;
+  }
+</style>
+</head>
+<body>
+
+<div id="map"></div>
+<div class="map-overlay top">
+  <button style = 'font-size: 2em;' onclick='run()'>
+  Track Route 64 Buses
+  </button>
+</div>
+<script>
+
+// get token at https://account.mapbox.com
+mapboxgl.accessToken = 'pk.eyJ1IjoieXVhbmJvbGl1IiwiYSI6ImNrZmZwbWczODBkMGUycmxhcWxwemVyN3MifQ.LDLOy5uMk0VKJsFNck4BGw';
+
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v11',
+  zoom: 13,
+  center: [-71.14344436, 42.35004476]
+});
+
+
+async function getBusLocations(){
+    const url= 'https://api-v3.mbta.com/vehicles?filter[route]=57&include=trip';
+    const response = await fetch(url);
+    const json = await response.json();
+    return json.data;
+}
+
+function markerCreator(log_lat) {
+    var marker = new mapboxgl.Marker()
+        .setLngLat(log_lat)
+        .addTo(map);
+    return marker; 
+}
+async function run(){
+    const locations = await getBusLocations();
+    //console.log(new Date());
+    //console.log(locations[0].attributes.latitude);
+    busLocations = [];
+    markers = [];
+    for (let index = 0; index < locations.length; index++) {
+        busLocations.push([locations[index].attributes.longitude, locations[index].attributes.latitude]);
+        markers.push(markerCreator([locations[index].attributes.longitude, locations[index].attributes.latitude])); 
+    }
+    console.log(busLocations);
+    //console.log(markers);
+    setTimeout(function (){for (let index = 0; index < markers.length; index++) {
+        markers[index].remove();        
+    }}, 4000);
+    
+    //update(markers, busLocations);
+    //return markers;
+    setTimeout(run, 4000);
+}
+/*
+
+async function update(){
+    markers = await run();
+    locations = await getBusLocations();
+    
+
+    for (let index = 0; index < locations.length; index++) {
+        markers.push(markerCreator([locations[index].attributes.longitude, locations[index].attributes.latitude]));        
+    }
+    //setTimeout(update, 10000);
+}
+
+var counter = 0;
+function move(){
+  setTimeout(() =>{
+    if (counter>=busStops.length) return;
+    marker.setLngLat(busStops[counter]);
+    counter++;
+    move();
+  }, 1000);
+}
+
+*/
+//update();
+//run()
+</script>
+</body>
+</html>
