@@ -4,6 +4,21 @@
 console.log(hello());
 */
 
+var app = express();
+app.use(express.json());
+let contacts = [];
+app.get("/", function (req, res) {
+ res.send("<h1> Routes: try GET /contacts </h1>");
+});
+// list all contacts
+app.get("/contacts", function (req, res) {
+ res.json(contacts);
+});
+// add a contact
+app.listen(3000);
+console.log("Running on port 3000");
+
+
 var data = [
     {
         "name"    : "peter parker",
