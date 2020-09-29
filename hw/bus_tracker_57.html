@@ -20,7 +20,7 @@
 <div id="map"></div>
 <div class="map-overlay top">
   <button style = 'font-size: 2em;' onclick='run()'>
-  Track Route 64 Buses
+  Track Route 57 Buses
   </button>
 </div>
 <script>
@@ -51,8 +51,7 @@ function markerCreator(log_lat) {
 }
 async function run(){
     const locations = await getBusLocations();
-    //console.log(new Date());
-    //console.log(locations[0].attributes.latitude);
+
     busLocations = [];
     markers = [];
     for (let index = 0; index < locations.length; index++) {
@@ -60,13 +59,10 @@ async function run(){
         markers.push(markerCreator([locations[index].attributes.longitude, locations[index].attributes.latitude])); 
     }
     console.log(busLocations);
-    //console.log(markers);
     setTimeout(function (){for (let index = 0; index < markers.length; index++) {
         markers[index].remove();        
     }}, 4000);
     
-    //update(markers, busLocations);
-    //return markers;
     setTimeout(run, 4000);
 }
 /*
