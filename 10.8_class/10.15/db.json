@@ -51,6 +51,19 @@
       "latitude": "71.0470",
       "longitude": "47.2651",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/cemshid/128.jpg"
+    },
+    {
+      "name": "Theodora Stoltenberg",
+      "dob": "1945-11-17",
+      "email": "Theodora86@hotmail.com",
+      "username": "Theodora.Stoltenberg",
+      "password": "planRuYiaRtqs2H",
+      "phone": "878.509.2971",
+      "streetaddress": "85909 Abernathy Rapid",
+      "citystatezip": "North Sonny, MA 28902",
+      "latitude": "2.8960",
+      "longitude": "-119.8498",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/davidcazalis/128.jpg"
     }
   ]
 }
