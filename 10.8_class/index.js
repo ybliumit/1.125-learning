@@ -3,7 +3,9 @@ const FileSync = require('lowdb/adapters/FileSync')
  
 const adapter = new FileSync('db.json')
 const db = low(adapter)
- 
+
+//documentation: https://www.npmjs.com/package/lowdb 
+
 // Set some defaults
 db.defaults({ posts: [], user: {} })
   .write()

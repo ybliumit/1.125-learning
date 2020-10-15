@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "name": "Alisha Murray",
+      "dob": "1991-10-23",
+      "email": "Alisha65@hotmail.com",
+      "username": "Alisha_Murray70",
+      "password": "CEvBtj73JkehLp_",
+      "phone": "596-421-9381 x613",
+      "streetaddress": "6273 Emard View",
+      "citystatezip": "South Orvilleview, TN 86297-2561",
+      "latitude": "48.5451",
+      "longitude": "155.0663",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/meln1ks/128.jpg"
+    },
+    {
+      "name": "Suzanne Swift",
+      "dob": "1978-7-4",
+      "email": "Suzanne_Swift@yahoo.com",
+      "username": "Suzanne.Swift69",
+      "password": "scs7ZUqKlKB3WHb",
+      "phone": "(865) 748-1726 x48696",
+      "streetaddress": "13196 Tierra Trafficway",
+      "citystatezip": "Lake Laneystad, OH 43360",
+      "latitude": "32.0914",
+      "longitude": "-132.9856",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/samscouto/128.jpg"
+    },
+    {
+      "name": "Renee Mohr II",
+      "dob": "1989-11-23",
+      "email": "Renee_Mohr@hotmail.com",
+      "username": "Renee9",
+      "password": "vidSSGo8BjmRHZB",
+      "phone": "844.680.8898 x4513",
+      "streetaddress": "687 Wyman Lane",
+      "citystatezip": "Strackemouth, WI 27974-3953",
+      "latitude": "38.4892",
+      "longitude": "131.5470",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/lu4sh1i/128.jpg"
+    },
+    {
+      "name": "Dr. Audreanne Kris",
+      "dob": "1961-6-28",
+      "email": "Audreanne_Kris@gmail.com",
+      "username": "Audreanne.Kris44",
+      "password": "HO8q3kfQSlbjEKT",
+      "phone": "1-247-906-7525 x51707",
+      "streetaddress": "933 Waelchi Path",
+      "citystatezip": "Beierport, WY 04610-6090",
+      "latitude": "71.0470",
+      "longitude": "47.2651",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/cemshid/128.jpg"
+    }
+  ]
+}
